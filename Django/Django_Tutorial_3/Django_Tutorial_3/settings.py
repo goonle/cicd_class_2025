@@ -75,7 +75,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Django_Tutorial_3.wsgi.application'
+# WSGI_APPLICATION = 'Django_Tutorial_3.wsgi.application'
+WSGI_APPLICATION = 'Django_Tutorial_3.wsgi.app'
 
 
 # Database
