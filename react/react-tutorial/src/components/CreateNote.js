@@ -5,7 +5,7 @@ function CreateNote(props) {
 
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(1);
 
     function handleTitleChange(e) {
         setTitle(e.target.value);

@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import DetailNote from "./DetailNote";
+import UpdateNote from "./UpdateNote";
+import {baseURL} from "../constraints";
 
 function ListNotes(props) {
 
@@ -9,14 +12,14 @@ function ListNotes(props) {
         let config = {
           method: 'get',
           maxBodyLength: Infinity,
-          url: 'http://127.0.0.1:8000/notes/notes/',
+          url: `${baseURL}/notes/notes/`,
           headers: {  }
         };
 
         axios.request(config)
         .then((response) => {
             setNotes(response.data);
-          console.log(JSON.stringify(response.data));
+            console.log(response.data);
         })
         .catch((error) => {
           console.log(error);
@@ -29,7 +32,8 @@ function ListNotes(props) {
             <h1>Notes</h1>
             {
                 notes.map(note => (
-                    <div key={note.id}>{note.title}</div>
+                    // <DetailNote note_id = {note.id}/>
+                    <UpdateNote note_id = {note.id} content={note.content} title={note.title}/>
                 ))
             }
         </div>
