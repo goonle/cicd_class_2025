@@ -1,0 +1,6 @@
+from django.contrib.auth import admin
+
+from notes.models import Note
+
+admin.site.register(Note)
+
