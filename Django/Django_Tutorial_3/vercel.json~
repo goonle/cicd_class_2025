@@ -18,7 +18,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "Django_Tutorial_3/wsgi.py"
+      "dest": "openmotor_back/wsgi.py"
     }
   ]
 }
