@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-from credential import DATABASE
+from .credential import DATABASE
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +24,6 @@ SECRET_KEY = 'django-insecure-s%zb^4d2+!cu@opgl%wktl_=eu)ps_$d6ws19pix3z^ytufaj@
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -75,19 +72,22 @@ TEMPLATES = [
     },
 ]
 
+
+############## [s] Django setting ###########################
 # WSGI_APPLICATION = 'Django_Tutorial_3.wsgi.application'
-WSGI_APPLICATION = 'Django_Tutorial_3.wsgi.app'
-
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-#
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+############## [e] Django setting ###########################
+# Database
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+############## [s] Vercel setting ###########################
+WSGI_APPLICATION = 'Django_Tutorial_3.wsgi.app'
+
 DATABASES = {
     'default' : {
         'ENGINE' : 'django.db.backends.postgresql',
@@ -99,6 +99,7 @@ DATABASES = {
     },
 
 }
+############## [e] Vercel setting ###########################
 
 
 # Password validation
